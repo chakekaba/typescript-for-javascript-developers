@@ -20,9 +20,10 @@ console.log(typeof fooCompatible);
 let fooIncompatible: string;
 let barIncompatible: number = 1;
 
-fooIncompatible = barIncompatible;
+// コンパイルエラー発生
+// fooIncompatible = barIncompatible;
 
-/*  */
+/* =============== */
 let fooString: string;
 let barString: string = 'string';
 
@@ -36,13 +37,10 @@ let fooNumber: number;
 let fooNumberLiteral: 1976 = 1976;
 fooNumber = fooNumberLiteral;
 
-/*  */
-// interface Animal {
-//     age: number;
-// }
+
 interface Animal {
     age: number;
-    name: string;
+    // name: string;
 }
 
 // animalクラスに依存しないPersonクラス
@@ -51,4 +49,6 @@ class Person {
 }
 
 let me: Animal;
+
+// 43行目でnameプロパティを定義すると、コンパイルエラー発生
 me = new Person(43);
